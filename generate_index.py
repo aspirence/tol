@@ -1,3 +1,6 @@
+import textwrap
+
+html = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,9 +57,7 @@
             padding: 15px 40px;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .logo { display: flex; align-items: center; text-decoration: none; }
-        .logo img { height: 50px; filter: brightness(0) invert(1); transition: opacity 0.3s ease; }
-        .logo:hover img { opacity: 0.8; }
+        .logo { font-family: 'Playfair Display'; font-size: 1.5rem; color: var(--gold); text-decoration: none; }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
         .nav-links a:hover { color: var(--gold); }
@@ -245,9 +246,7 @@
 
     <!-- Nav -->
     <nav>
-        <a href="#" class="logo">
-            <img src="assets/logo.png" alt="Tree of Life Logo">
-        </a>
+        <a href="#" class="logo">Rudraksh</a>
         <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
         <div class="nav-links">
             <a href="#investment">The Investment</a>
@@ -262,7 +261,6 @@
     <section class="hero" id="home">
         <div class="particles-bg"></div>
         <div class="hero-content reveal">
-            <img src="assets/logo.png" alt="Tree of Life by Taj Logo" style="height: 100px; margin-bottom: 24px; filter: brightness(0) invert(1);">
             <div class="hero-eyebrow">Exclusive Private Wealth Opportunity</div>
             <h1>Own a Piece of Taj.<br><span class="accent">Earn Every Month.</span></h1>
             <p>A registered villa. A world-class brand. ₹37,000 flowing to you every month.</p>
@@ -706,3 +704,10 @@
     </script>
 </body>
 </html>
+"""
+
+# Let's save this as index.html
+with open('index.html', 'w') as f:
+    f.write(html.strip())
+    
+print("Successfully generated index.html")
