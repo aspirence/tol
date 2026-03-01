@@ -7,12 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #0F1C2E;
-            --gold: #B8860B;
-            --gold-light: #FFD700;
-            --cream: #F5F0E8;
-            --dark: #070E18;
-            --text: #c8d2e0;
+            --navy: #eaddb6; 
+            --gold: #935A31; 
+            --gold-light: #C39C6B; 
+            --cream: #3A2419; 
+            --dark: #F3E4B2; 
+            --text: #412f22; 
+            --accent-red: #792822; 
             --transition: 0.3s ease;
         }
 
@@ -48,14 +49,14 @@
         /* Nav */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(7, 14, 24, 0.95);
+            background: rgba(243, 228, 178, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+            border-bottom: 1px solid rgba(147, 90, 49, 0.3);
             padding: 15px 40px;
             display: flex; justify-content: space-between; align-items: center;
         }
         .logo { display: flex; align-items: center; text-decoration: none; }
-        .logo img { height: 50px; filter: brightness(0) invert(1); transition: opacity 0.3s ease; }
+        .logo img { height: 50px; filter: brightness(0.2) sepia(1) hue-rotate(330deg) saturate(3); transition: opacity 0.3s ease; }
         .logo:hover img { opacity: 0.8; }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
@@ -74,8 +75,8 @@
             text-decoration: none; font-weight: 500; transition: var(--transition);
             cursor: pointer; text-align: center;
         }
-        .btn-gold { background: var(--gold); color: var(--navy); border: 2px solid var(--gold); }
-        .btn-gold:hover { background: transparent; color: var(--gold); }
+        .btn-gold { background: var(--gold); color: #FDFBF7; border: 2px solid var(--gold); }
+        .btn-gold:hover { background: transparent; color: var(--cream); border-color: var(--cream); }
         .btn-outline { background: transparent; color: var(--cream); border: 2px solid var(--cream); }
         .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
@@ -83,8 +84,8 @@
         .particles-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-image: 
-                radial-gradient(circle, rgba(184, 134, 11, 0.15) 1px, transparent 1px),
-                radial-gradient(circle, rgba(184, 134, 11, 0.1) 1px, transparent 1px);
+                radial-gradient(circle, rgba(147, 90, 49, 0.25) 1px, transparent 1px),
+                radial-gradient(circle, rgba(147, 90, 49, 0.2) 1px, transparent 1px);
             background-size: 60px 60px, 40px 40px;
             background-position: 0 0, 20px 20px;
             animation: shimmer 15s linear infinite;
@@ -100,7 +101,7 @@
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             flex-direction: column; text-align: center;
-            background: radial-gradient(circle at center, var(--navy) 0%, var(--dark) 100%);
+            background: radial-gradient(circle at center, #fffcee 0%, var(--dark) 100%);
             padding-top: 100px; padding-bottom: 60px;
             position: relative; overflow: hidden;
         }
@@ -113,12 +114,12 @@
         .counter-strip {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             width: 100%; max-width: 1200px; margin: 4rem auto 0 auto; gap: 1rem;
-            border-top: 1px solid rgba(184, 134, 11, 0.3);
-            border-bottom: 1px solid rgba(184, 134, 11, 0.3);
-            background: rgba(15, 28, 46, 0.5); padding: 2rem 1rem;
+            border-top: 1px solid rgba(147, 90, 49, 0.4);
+            border-bottom: 1px solid rgba(147, 90, 49, 0.4);
+            background: rgba(234, 221, 182, 0.8); padding: 2rem 1rem;
             position: relative; z-index: 1;
         }
-        .counter-item { text-align: center; border-right: 1px solid rgba(184, 134, 11, 0.1); }
+        .counter-item { text-align: center; border-right: 1px solid rgba(147, 90, 49, 0.2); }
         .counter-item:last-child { border-right: none; }
         .counter-val { font-family: 'Playfair Display'; font-size: 2.5rem; color: var(--gold); line-height: 1.2; }
         .counter-lbl { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text); margin-top: 0.5rem; }
@@ -129,18 +130,18 @@
 
         /* Section 2: Cards */
         .card {
-            background: rgba(15, 28, 46, 0.6);
-            border: 1px solid rgba(184, 134, 11, 0.2);
+            background: rgba(243, 228, 178, 0.8);
+            border: 1px solid rgba(147, 90, 49, 0.3);
             padding: 2.5rem 2rem;
             border-radius: 4px;
             transition: all 0.4s ease;
             position: relative; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(58, 36, 25, 0.15);
         }
         .card:hover {
             transform: translateY(-10px);
             border-color: var(--gold);
-            box-shadow: 0 10px 40px rgba(184, 134, 11, 0.15);
+            box-shadow: 0 10px 40px rgba(147, 90, 49, 0.25);
         }
         .card-icon { font-size: 2.5rem; color: var(--gold); margin-bottom: 1.5rem; }
         
@@ -156,11 +157,11 @@
 
         /* Section 4: Timeline */
         .journey-section { background: var(--navy); }
-        .timeline-wrapper { margin-top: 3rem; background: var(--dark); padding: 3rem; border-radius: 4px; border: 1px solid rgba(184, 134, 11, 0.2); }
+        .timeline-wrapper { margin-top: 3rem; background: var(--dark); padding: 3rem; border-radius: 4px; border: 1px solid rgba(147, 90, 49, 0.3); }
         .timeline-tabs { display: flex; justify-content: space-between; position: relative; margin-bottom: 3rem; }
         .timeline-tabs::before {
             content: ''; position: absolute; top: 50%; left: 0; transform: translateY(-50%);
-            width: 100%; height: 4px; background: rgba(184, 134, 11, 0.2); z-index: 1;
+            width: 100%; height: 4px; background: rgba(147, 90, 49, 0.3); z-index: 1;
         }
         .timeline-fill {
             position: absolute; top: 50%; left: 0; transform: translateY(-50%);
@@ -173,39 +174,39 @@
             display: flex; align-items: center; justify-content: center;
             cursor: pointer; position: relative; z-index: 3; transition: var(--transition);
         }
-        .timeline-btn.active, .timeline-btn:hover { background: var(--gold); color: var(--navy); transform: scale(1.2); }
+        .timeline-btn.active, .timeline-btn:hover { background: var(--gold); color: #FDFBF7; transform: scale(1.2); }
         .timeline-content { text-align: center; padding: 2rem; border: 1px dashed rgba(184, 134, 11, 0.4); border-radius: 4px; }
 
         /* Section 5: Financing */
         .strategy-card { background: var(--dark); border-left: 4px solid var(--gold); padding: 2rem; margin-bottom: 1.5rem; }
-        .finance-highlight { font-size: 1.5rem; border: 2px dashed var(--gold); padding: 1.5rem; text-align: center; color: var(--cream); border-radius: 4px; margin-top: 2rem; background: rgba(184,134,11,0.05); }
+        .finance-highlight { font-size: 1.5rem; border: 2px dashed var(--gold); padding: 1.5rem; text-align: center; color: var(--cream); border-radius: 4px; margin-top: 2rem; background: rgba(147, 90, 49, 0.1); }
 
         /* Section 6: Revenue Streams */
         .streams-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
         .stream-card {
-            background: var(--dark); padding: 2rem 1.5rem; text-align: center; border: 1px solid rgba(255,255,255,0.05);
+            background: var(--dark); padding: 2rem 1.5rem; text-align: center; border: 1px solid rgba(58, 36, 25, 0.1);
             transition: var(--transition);
         }
-        .stream-card:hover { border-color: var(--gold); background: rgba(184,134,11,0.1); }
+        .stream-card:hover { border-color: var(--gold); background: rgba(147, 90, 49, 0.15); }
         .stream-card h4 { margin: 1rem 0; font-size: 1.2rem; }
-        .stream-desc { display: none; font-size: 0.9rem; color: #a0aab8; }
+        .stream-desc { display: none; font-size: 0.9rem; color: var(--text); }
         .stream-card:hover .stream-desc { display: block; }
         .streams-note { text-align: center; margin-top: 3rem; font-style: italic; color: var(--cream); }
 
         /* Section 7: Comparison */
         .comparison-table { width: 100%; border-collapse: collapse; margin-top: 3rem; background: var(--navy); }
-        .comparison-table th, .comparison-table td { padding: 1.5rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .comparison-table th, .comparison-table td { padding: 1.5rem; text-align: left; border-bottom: 1px solid rgba(58, 36, 25, 0.1); }
         .comparison-table th { font-family: 'Playfair Display'; color: var(--gold); border-bottom: 2px solid var(--gold); }
-        .comparison-table tr.tol-row { background: rgba(184, 134, 11, 0.1); border-left: 4px solid var(--gold); box-shadow: 0 0 20px rgba(184, 134, 11, 0.1); position: relative;}
+        .comparison-table tr.tol-row { background: rgba(147, 90, 49, 0.2); border-left: 4px solid var(--gold); box-shadow: 0 0 20px rgba(147, 90, 49, 0.2); position: relative;}
         .comparison-table tr.tol-row td { color: var(--cream); font-weight: 500; }
         
         .bar-chart { margin-top: 4rem; display: flex; flex-direction: column; gap: 1rem; }
         .bar-row { display: flex; align-items: center; }
         .bar-label { width: 120px; font-weight: 500; }
-        .bar-track { flex-grow: 1; height: 30px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden; position: relative; }
+        .bar-track { flex-grow: 1; height: 30px; background: rgba(58, 36, 25, 0.1); border-radius: 2px; overflow: hidden; position: relative; }
         .bar-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-weight: bold; transition: width 1.5s ease-out; width: 0%; }
-        .fill-gold { background: linear-gradient(90deg, #8B6914, #B8860B); color: var(--navy); }
-        .fill-grey { background: #2a3441; color: var(--cream); }
+        .fill-gold { background: linear-gradient(90deg, var(--gold-light), var(--gold)); color: #FDFBF7; }
+        .fill-grey { background: #eaddb6; color: var(--cream); }
 
         /* Section 8: Safe */
         .protection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
@@ -228,7 +229,7 @@
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; }
+        footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(58, 36, 25, 0.1); font-size: 0.8rem; }
         
         /* Mobile Adjustments */
         @media(max-width: 768px) {
@@ -262,7 +263,7 @@
     <section class="hero" id="home">
         <div class="particles-bg"></div>
         <div class="hero-content reveal">
-            <img src="assets/logo.png" alt="Tree of Life by Taj Logo" style="height: 100px; margin-bottom: 24px; filter: brightness(0) invert(1);">
+            <img src="assets/logo.png" alt="Tree of Life by Taj Logo" style="height: 100px; margin-bottom: 24px; filter: brightness(0.2) sepia(1) hue-rotate(330deg) saturate(3);">
             <div class="hero-eyebrow">Exclusive Private Wealth Opportunity</div>
             <h1>Own a Piece of Taj.<br><span class="accent">Earn Every Month.</span></h1>
             <p>A registered villa. A world-class brand. ₹37,000 flowing to you every month.</p>
@@ -695,7 +696,7 @@
                         contentBox.innerHTML = `
                             <h4>${data.text}</h4>
                             <p class="accent" style="font-size: 2.5rem; font-family: 'Playfair Display'; margin: 10px 0; font-weight: bold;">${data.val}</p>
-                            <p style="color: #a0aab8; font-size: 0.9rem;">${data.desc}</p>
+                            <p style="color: var(--text); font-size: 0.9rem;">${data.desc}</p>
                         `;
                         contentBox.style.opacity = '1';
                     }, 300);
